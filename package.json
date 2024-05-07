@@ -1,0 +1,16 @@
+{
+  "name": "express-service-handler",
+  "version": "1.0.1",
+  "description": "A simple reusable function to handle responses from Express.JS services",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "https://github.com/therealseanwallace",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
+}
