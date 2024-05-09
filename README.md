@@ -51,6 +51,14 @@ The `handleServiceResponse` function takes an object with the following paramete
 
 - `sendResponse`: (Optional) A boolean indicating whether to send the response immediately. If set to false, the function will return the result object without sending the response. Defaults to true.
 
+## Version Notes
+
+- Added handling of HTTP responses from remote services accessed via an Express API route
+
+### Possible breaking changes in v2.0.0
+
+- The function is now async; review how you're using it and adjust accordingly.
+
 # License
 Copyright Sean Patrick Wallace 2024
 

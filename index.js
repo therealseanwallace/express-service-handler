@@ -8,14 +8,22 @@
  * @param {boolean} [params.sendResponse=true] - Whether to send a response back to the client. Defaults to true.
  * @returns {Object} Express response object. If the operation was successful, returns a status and the result of the operation. If the operation failed, returns a status and the reason for failure.
  */
-const handleServiceResponse = ({ res, result, sendResponse = true }) => {
+const handleServiceResponse = async ({ res, result, sendResponse = true }) => {
   if (!result.ok) {
     return res.status(result.status || 400).json({ errors: [result.reason] });
   }
   if (!sendResponse) {
     return result;
   }
-  return res.status(result.status || 200).json(result);
+
+  let body;
+  // Check if result is an HTTP response
+  if (result.headers && result.body) {
+    body = await result.json();
+  }
+
+  // If it is an http response, send its body as json instead of the result
+  return res.status(result.status || 200).json(body || result);
 };
 
 export { handleServiceResponse };
