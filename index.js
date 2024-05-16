@@ -10,7 +10,7 @@
  */
 const handleServiceResponse = async ({ res, result, sendResponse = true }) => {
   if (!result.ok) {
-    return res.status(result.status || 400).json({ errors: [result.reason] });
+    return res.status(result.status || 400).json({ ok:false, errors: [result.reason] });
   }
   if (!sendResponse) {
     return result;
