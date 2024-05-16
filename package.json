@@ -1,6 +1,6 @@
 {
   "name": "express-service-handler",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A simple reusable function to handle responses from Express.JS services",
   "main": "index.js",
   "type": "module",
